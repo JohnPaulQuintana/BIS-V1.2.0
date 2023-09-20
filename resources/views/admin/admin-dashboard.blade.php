@@ -171,7 +171,7 @@
                             console.log(response); // Modify this to handle the response as needed
                             const initialUtterance = new SpeechSynthesisUtterance(response.init);
                             // const answerUtterance = new SpeechSynthesisUtterance(response.answer);
-                            // synth.speak(initialUtterance);
+                            synth.speak(initialUtterance);
                             let itemList = ''
                            
                              // Create a list of items using <li> tags

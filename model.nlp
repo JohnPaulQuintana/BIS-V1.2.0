@@ -1,0 +1,699 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "hello": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "howdi": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "do,employe,have,how,mani,we": {
+            "intent": "asking.employee.many",
+            "domain": "default"
+          },
+          "give,list,me,of,present,the,today": {
+            "intent": "asking.employee.present.today",
+            "domain": "default"
+          },
+          "do,have,how,mani,product,we": {
+            "intent": "asking.products.all",
+            "domain": "default"
+          },
+          "activ,attend,system,the": {
+            "intent": "command.attendance",
+            "domain": "default"
+          },
+          "all,avail,print,product,the": {
+            "intent": "command.print.available",
+            "domain": "default"
+          },
+          "thank,you": {
+            "intent": "thanks",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greetings.hello": "default",
+          "asking.employee.many": "default",
+          "asking.employee.present.today": "default",
+          "asking.products.all": "default",
+          "command.attendance": "default",
+          "command.print.available": "default",
+          "thanks": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "howdy",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "how many employee do we have",
+            "intent": "asking.employee.many"
+          },
+          {
+            "domain": "default",
+            "utterance": "give me the list of present today",
+            "intent": "asking.employee.present.today"
+          },
+          {
+            "domain": "default",
+            "utterance": "how many products do we have",
+            "intent": "asking.products.all"
+          },
+          {
+            "domain": "default",
+            "utterance": "activate the attendance system",
+            "intent": "command.attendance"
+          },
+          {
+            "domain": "default",
+            "utterance": "print all the available products",
+            "intent": "command.print.available"
+          },
+          {
+            "domain": "default",
+            "utterance": "thank you",
+            "intent": "thanks"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "hello": 1,
+              "hi": 1,
+              "howdi": 1,
+              "how": 1,
+              "mani": 1,
+              "employe": 1,
+              "do": 1,
+              "we": 1,
+              "have": 1,
+              "give": 1,
+              "me": 1,
+              "the": 1,
+              "list": 1,
+              "of": 1,
+              "present": 1,
+              "today": 1,
+              "product": 1,
+              "activ": 1,
+              "attend": 1,
+              "system": 1,
+              "print": 1,
+              "all": 1,
+              "avail": 1,
+              "thank": 1,
+              "you": 1
+            },
+            "intents": {
+              "greetings.hello": 1,
+              "asking.employee.many": 1,
+              "asking.employee.present.today": 1,
+              "asking.products.all": 1,
+              "command.attendance": 1,
+              "command.print.available": 1,
+              "thanks": 1
+            },
+            "intentFeatures": {
+              "greetings.hello": {
+                "hello": 1,
+                "hi": 1,
+                "howdi": 1
+              },
+              "asking.employee.many": {
+                "how": 1,
+                "mani": 1,
+                "employe": 1,
+                "do": 1,
+                "we": 1,
+                "have": 1
+              },
+              "asking.employee.present.today": {
+                "give": 1,
+                "me": 1,
+                "the": 1,
+                "list": 1,
+                "of": 1,
+                "present": 1,
+                "today": 1
+              },
+              "asking.products.all": {
+                "how": 1,
+                "mani": 1,
+                "product": 1,
+                "do": 1,
+                "we": 1,
+                "have": 1
+              },
+              "command.attendance": {
+                "activ": 1,
+                "the": 1,
+                "attend": 1,
+                "system": 1
+              },
+              "command.print.available": {
+                "print": 1,
+                "all": 1,
+                "the": 1,
+                "avail": 1,
+                "product": 1
+              },
+              "thanks": {
+                "thank": 1,
+                "you": 1
+              }
+            },
+            "featuresToIntent": {
+              "hello": [
+                "greetings.hello"
+              ],
+              "hi": [
+                "greetings.hello"
+              ],
+              "howdi": [
+                "greetings.hello"
+              ],
+              "how": [
+                "asking.employee.many",
+                "asking.products.all"
+              ],
+              "mani": [
+                "asking.employee.many",
+                "asking.products.all"
+              ],
+              "employe": [
+                "asking.employee.many"
+              ],
+              "do": [
+                "asking.employee.many",
+                "asking.products.all"
+              ],
+              "we": [
+                "asking.employee.many",
+                "asking.products.all"
+              ],
+              "have": [
+                "asking.employee.many",
+                "asking.products.all"
+              ],
+              "give": [
+                "asking.employee.present.today"
+              ],
+              "me": [
+                "asking.employee.present.today"
+              ],
+              "the": [
+                "asking.employee.present.today",
+                "command.attendance",
+                "command.print.available"
+              ],
+              "list": [
+                "asking.employee.present.today"
+              ],
+              "of": [
+                "asking.employee.present.today"
+              ],
+              "present": [
+                "asking.employee.present.today"
+              ],
+              "today": [
+                "asking.employee.present.today"
+              ],
+              "product": [
+                "asking.products.all",
+                "command.print.available"
+              ],
+              "activ": [
+                "command.attendance"
+              ],
+              "attend": [
+                "command.attendance"
+              ],
+              "system": [
+                "command.attendance"
+              ],
+              "print": [
+                "command.print.available"
+              ],
+              "all": [
+                "command.print.available"
+              ],
+              "avail": [
+                "command.print.available"
+              ],
+              "thank": [
+                "thanks"
+              ],
+              "you": [
+                "thanks"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "hello",
+                "hi",
+                "howdi",
+                "how",
+                "mani",
+                "employe",
+                "do",
+                "we",
+                "have",
+                "give",
+                "me",
+                "the",
+                "list",
+                "of",
+                "present",
+                "today",
+                "product",
+                "activ",
+                "attend",
+                "system",
+                "print",
+                "all",
+                "avail",
+                "thank",
+                "you"
+              ],
+              "intents": [
+                "greetings.hello",
+                "asking.employee.many",
+                "asking.employee.present.today",
+                "asking.products.all",
+                "command.attendance",
+                "command.print.available",
+                "thanks"
+              ],
+              "perceptrons": [
+                [
+                  7.224323749542236,
+                  7.249366760253906,
+                  7.219565391540527,
+                  -1.2176142930984497,
+                  -1.2176142930984497,
+                  -0.9274530410766602,
+                  -1.2176142930984497,
+                  -1.2176142930984497,
+                  -1.2176142930984497,
+                  -0.6753602027893066,
+                  -0.6753602027893066,
+                  -2.965339422225952,
+                  -0.6753602027893066,
+                  -0.6753602027893066,
+                  -0.6753602027893066,
+                  -0.6753602027893066,
+                  -1.2299302816390991,
+                  -1.3492980003356934,
+                  -1.3492980003356934,
+                  -1.3492980003356934,
+                  -0.9397687911987305,
+                  -0.9397687911987305,
+                  -0.9397687911987305,
+                  -3.4889495372772217,
+                  -3.4889495372772217,
+                  7.014667915309157
+                ],
+                [
+                  -0.191557377576828,
+                  -0.19043423235416412,
+                  -0.18926948308944702,
+                  1.2599403858184814,
+                  1.2599403858184814,
+                  7.534059524536133,
+                  1.2599403858184814,
+                  1.2599403858184814,
+                  1.2599403858184814,
+                  -0.08280139416456223,
+                  -0.08280139416456223,
+                  -0.1704849749803543,
+                  -0.08280139416456223,
+                  -0.08280139416456223,
+                  -0.08280139416456223,
+                  -0.08280139416456223,
+                  -6.298092842102051,
+                  -0.049826979637145996,
+                  -0.049826979637145996,
+                  -0.049826979637145996,
+                  -0.007982511073350906,
+                  -0.007982511073350906,
+                  -0.007982511073350906,
+                  -0.10427749156951904,
+                  -0.10427749156951904,
+                  0.19616315913290125
+                ],
+                [
+                  -0.17176353931427002,
+                  -0.16605116426944733,
+                  -0.16052135825157166,
+                  -0.09911103546619415,
+                  -0.09911103546619415,
+                  -0.021274935454130173,
+                  -0.09911103546619415,
+                  -0.09911103546619415,
+                  -0.09911103546619415,
+                  2.171628475189209,
+                  2.171628475189209,
+                  1.1027743816375732,
+                  2.171628475189209,
+                  2.171628475189209,
+                  2.171628475189209,
+                  2.171628475189209,
+                  -0.5164210796356201,
+                  -0.5420472621917725,
+                  -0.5420472621917725,
+                  -0.5420472621917725,
+                  -0.4293839633464813,
+                  -0.4293839633464813,
+                  -0.4293839633464813,
+                  -0.1356622874736786,
+                  -0.1356622874736786,
+                  0.15313052502031624
+                ],
+                [
+                  -0.12303724884986877,
+                  -0.11854031682014465,
+                  -0.11420554667711258,
+                  1.5047317743301392,
+                  1.5047317743301392,
+                  -6.753242492675781,
+                  1.5047317743301392,
+                  1.5047317743301392,
+                  1.5047317743301392,
+                  -0.009006524458527565,
+                  -0.009006524458527565,
+                  -1.668766736984253,
+                  -0.009006524458527565,
+                  -0.009006524458527565,
+                  -0.009006524458527565,
+                  -0.009006524458527565,
+                  6.740634441375732,
+                  -0.07694181799888611,
+                  -0.07694181799888611,
+                  -0.07694181799888611,
+                  -1.5565943717956543,
+                  -1.5565943717956543,
+                  -1.5565943717956543,
+                  -0.10554924607276917,
+                  -0.10554924607276917,
+                  -0.33788621034078953
+                ],
+                [
+                  -0.4108217656612396,
+                  -0.4084656238555908,
+                  -0.40664055943489075,
+                  -0.11099467426538467,
+                  -0.11099467426538467,
+                  -0.08666247129440308,
+                  -0.11099467426538467,
+                  -0.11099467426538467,
+                  -0.11099467426538467,
+                  -0.5228431224822998,
+                  -0.5228431224822998,
+                  2.444873571395874,
+                  -0.5228431224822998,
+                  -0.5228431224822998,
+                  -0.5228431224822998,
+                  -0.5228431224822998,
+                  -0.7873923778533936,
+                  3.810680866241455,
+                  3.810680866241455,
+                  3.810680866241455,
+                  -0.7655049562454224,
+                  -0.7655049562454224,
+                  -0.7655049562454224,
+                  -0.2716037333011627,
+                  -0.2716037333011627,
+                  0.4086424897280595
+                ],
+                [
+                  -0.23084932565689087,
+                  -0.2276236116886139,
+                  -0.22107118368148804,
+                  -0.6018851399421692,
+                  -0.6018851399421692,
+                  -0.043453749269247055,
+                  -0.6018851399421692,
+                  -0.6018851399421692,
+                  -0.6018851399421692,
+                  -0.41890326142311096,
+                  -0.41890326142311096,
+                  1.934242844581604,
+                  -0.41890326142311096,
+                  -0.41890326142311096,
+                  -0.41890326142311096,
+                  -0.41890326142311096,
+                  2.607515335083008,
+                  -0.7478846907615662,
+                  -0.7478846907615662,
+                  -0.7478846907615662,
+                  3.1806583404541016,
+                  3.1806583404541016,
+                  3.1806583404541016,
+                  -0.17510612308979034,
+                  -0.17510612308979034,
+                  0.20194604459184406
+                ],
+                [
+                  -1.1429297924041748,
+                  -1.1357275247573853,
+                  -1.1282424926757812,
+                  -0.2412227988243103,
+                  -0.2412227988243103,
+                  -0.16529963910579681,
+                  -0.2412227988243103,
+                  -0.2412227988243103,
+                  -0.2412227988243103,
+                  -0.14492221176624298,
+                  -0.14492221176624298,
+                  -0.6035887002944946,
+                  -0.14492221176624298,
+                  -0.14492221176624298,
+                  -0.14492221176624298,
+                  -0.14492221176624298,
+                  -0.2502624988555908,
+                  -0.2541758716106415,
+                  -0.2541758716106415,
+                  -0.2541758716106415,
+                  -0.17473922669887543,
+                  -0.17473922669887543,
+                  -0.17473922669887543,
+                  6.560740947723389,
+                  6.560740947723389,
+                  1.1490362924249926
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "howdy"
+      ],
+      [
+        "en",
+        "how many employee do we have"
+      ],
+      [
+        "en",
+        "give me the list of present today"
+      ],
+      [
+        "en",
+        "how many products do we have"
+      ],
+      [
+        "en",
+        "activate the attendance system"
+      ],
+      [
+        "en",
+        "print all the available products"
+      ],
+      [
+        "en",
+        "thank you"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "greetings.hello": [
+          {
+            "answer": "greetings"
+          }
+        ],
+        "greetings.asking": [
+          {
+            "answer": "greetings"
+          }
+        ],
+        "asking.employee.many": [
+          {
+            "answer": {
+              "model": "User",
+              "table": "users",
+              "query": "all",
+              "exclude": "administrator"
+            }
+          }
+        ],
+        "asking.employee.present.today": [
+          {
+            "answer": {
+              "model": "Employee",
+              "table": "employees",
+              "query": "all",
+              "include-employee": "employee_id"
+            }
+          }
+        ],
+        "asking.products.all": [
+          {
+            "answer": {
+              "model": "Inventory",
+              "table": "inventories",
+              "query": "all",
+              "include-stock": "stocks"
+            }
+          }
+        ],
+        "command.attendance": [
+          {
+            "answer": {
+              "model": "Employee",
+              "table": "employees",
+              "query": "open",
+              "include-attendance": "initializing Camera..."
+            }
+          }
+        ],
+        "command.print.available": [
+          {
+            "answer": {
+              "model": "Inventory",
+              "table": "inventories",
+              "query": "all",
+              "include-print": "stocks"
+            }
+          }
+        ],
+        "thanks": [
+          {
+            "answer": "your welcome!"
+          },
+          {
+            "answer": "Im happy to serve you!"
+          },
+          {
+            "answer": "have a good day!"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
